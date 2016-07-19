@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">	
+	<link rel="stylesheet" type="text/css" href="../globalStyle.css">
+	<title>Simple Harmonic Oscillator</title>
+</head>
+
+<body class="color3">
+	
+	<nav class="color5">
+		<ul id="navBar"></ul>
+	</nav>
+	<div id="buffer"></div>
+	<header>
+		<h1>Simple Harmonic Oscillator</h1>
+	</header>
+	
+	<div class='container'id='pageBody'>	
+		<div class='container' id='initialValues'>
+			<div id='mass'></div>
+			<div id='springConst'></div>
+			<div id='amplitude'></div>
+			
+		</div>
+
+		<div class='container' id='actionWindow'>
+			<div class='container' id='shoContainer'>
+				<img src="spring.gif" alt="" id='springImage'>
+				<div class='object' id='block'></div>
+				<br><br><br><br>
+				<span id='marker1' class='marker'>|</span>
+				<span id='marker2' class='marker'>|</span>
+				<span id='marker3' class='marker'>|</span>
+			</div>
+		</div>
+
+		<div class='container' id='buttonContainer'>
+			<button id='play'>Play</button>
+			<button id='pause'>Pause</button>
+			<button id='record'>Record Data</button>
+		</div>
+		<br>
+		<div id='printValues' class='container'>
+			<div id='time'></div>
+			<div id='position'></div>
+			<div id='velocity'></div>
+			<div id='force'></div>
+		</div>
+		<br><br><hr>
+		<div class='container' id='dataContainer'>
+			<table id='dataTable'>
+				<thead>
+					<tr>
+						<th>Time</th>
+						<th>Position</th>
+						<th>Velocity</th>
+						<th>Force</th>
+					</tr>
+				</thead>
+				<tbody id='dataTableBody'>
+					
+				</tbody>
+			</table>
+		</div>
+		<hr>
+	</div>
+
+	<section id='about'>
+		<div class='collapse-pm'>[ &plus; ]</div>
+		<h2 class='collapse-clickable'>About This Page:</h2>
+		<article id='aboutContents' class='collapse-collapsable hide'>
+			<p>
+				This was one of my earliest projects ever. I had <i>just</i> learned how to manipulate HTML elements with javascript (jquery to be exact). I made this page more out of necessity than anything else; I needed to show my students how a Simple Harmonic Oscillator works. To make a long story short: this idea was insanely successful, and I used this page in class for weeks.
+			</p>
+			<p>
+				A lot of the script that runs this page is not to my liking: it is barely commented, badly written, and not applicable to much else outside of this project. I didn't know how HTML canvas worked at the time, so everything on this page is either a picture or a div. I eventually found out that there are <i>much</i> better ways of creating animations. Instead of making changes to this page, I decided to leave it as-is and began working on my Physics Engine page. This page serves as a reminder of how far I've come.
+			</p>
+			<p>
+				Enough coding jibber jabber, let's talk Physics (you know you want to!) As far as making all the calculations for the harmonic oscillator, I tried really hard to code it in an "anything can happen" sort of way: create a spring force that is exerted on the block: <span class='eqn'>F<sub>spr</sub> = &minus;k x</span>, and cause the block to accelerate. But this proved extremely challenging (more on this in the Physics Engine page), so I decided to take the easy way out and used the Simple Harmonic Oscillator equation: <span class='eqn'>x(t) = A sin(&omega; t)</span>. It felt like cheating, but at the end of the day, I needed to have this ready for class the next day (this is Hollywood after all, and the show must go on!). <span style='font-size:13px'>(I'm not sure if the punctuation at the end of the previous sentence is correct)</span>
+			</p>
+			<p>
+				My main goal for this project was to show my students how different variables affected the behavior of the block (mass, spring constant, amplitude, etc.). I was able to do this through the console, by changing the values of the different variables before hitting play. Although this design was fairly handy in the classroom, my end goal for this project was to make the page more intuitive and user-friendly to the point where students and teachers could play around with the page without needing too many directions from me. 
+			</p>
+			<p>
+				On a final note, the Play and Pause buttons are fairly straightforward, but the Record Data button requires some explanation: pressing that button will advance the simple harmonic oscillator a full 10 seconds instantly, recording the block's position, velocity, and acceleration every 10 ms (for a total of 1000 measurements). The results are printed in the table below the animation, and they can easily be copy/pasted into Microsoft Excel to produce various graphs. I added this feature after a few days of demonstrations to the class.  
+			</p>
+			<p>
+				I have more to say about this page, but I don't think anybody is still reading at this point. 
+			</p>
+		</article>
+	</section>
+	
+	<hr>
+
+	<div class='container' id='pageFooter'>
+		<h3>By Armen Ourfalian</h3>
+	</div>
+</body>
+
+<script type="text/javascript" src="../globalFunctions.js"></script>
+<script type="text/javascript" src="../navBar.js"></script>
+<script type='text/javascript' src='../jquery-1.11.1.js'></script>
+<script type="text/javascript" src="simple-harmonic.js"></script>
+</html>

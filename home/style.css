@@ -1,3 +1,7 @@
+a {
+	color: white;
+}
+
 .bar {
 	width: 100%;
 	font-size: 30px;
@@ -17,8 +21,8 @@
 .navLink {
 	position: relative;
 	top: -60px;
-	padding-top: 60px;
-	z-index: -1;
+	margin-top: 60px;
+	z-index: 0;
 }
 
 
@@ -39,7 +43,6 @@
 
 #links a {
 	display: block;
-	color: white;
 }
 
 #links p {
@@ -49,6 +52,7 @@
 /* LINKS END*/
 
 /* RESUME START*/
+
 .category {
 	text-align: left;
 	display: inline-block;;

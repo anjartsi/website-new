@@ -88,7 +88,7 @@ nav a:active{
 }
 
 /* +/- button for collapsable elements */
-.pm {
+.collapse-pm {
 	-webkit-user-select: none;	
 	font-weight: bold;
 	display: inline;

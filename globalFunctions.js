@@ -39,28 +39,3 @@ function toggleClass(el,cls) {
 
 
 
-// ~~~~~~~~~~~~~~~~~~~~~~ Making Elements Collapsable ~~~~~~~~~~~~~~~~~~~~
-/** 
-  adds an event listener to make an element collapsable on click
-  first parameter is the element that is the target of the click
-    this element should be bigger (or outside of) the collapsing element
-  second parameter is the element that will expand/collapse
-  third parameter (optional) is an element that holds a + or - to show the state
-**/
-function collapsable(elemToClick, elemToHide, plusminus) {
-  if(elemToClick) {
-    elemToClick.style.cursor = "pointer";
-    elemToClick.addEventListener('click', function() {
-      
-      toggleClass(elemToHide,'hide');
-      
-      // Change the plus/minus sign accordingly
-      if(plusminus) {
-        if(!hasClass(elemToHide,'hide'))
-          plusminus.innerHTML='[ &minus; ]';  
-        else
-          plusminus.innerHTML='[ &plus; ]';
-      } // end if(plusminus)
-    })
-  }
-}

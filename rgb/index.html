@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../globalStyle.css">
+	<title>RGB</title>
+</head>
+<body class="color3">
+	
+	<nav class="color5">
+		<ul id="navBar"></ul>
+	</nav>
+	<div id="buffer"></div>	<header>
+		<h1>RGB Color Chooser</h1>
+	</header>
+	<div class='container' id='pageBody'>
+		<div class='container' id='savedColorsContainer'>
+			<div id='savedColorsScrollCont'></div>
+		</div>
+
+
+		<div class='container' id='singleColorContainer'>
+			<div class='singleSliderCont red' id='redSingleSliderCont'>
+				<label for='redSingleSlider'>red</label>
+				<input class='singleSlider' id='redSingleSlider' type='range' min='0' max='255' value='215'/>
+				<div class='clearBoth'></div>
+				<div class='singleSliderValue' id='redSingleSliderValue'>215</div>
+			</div>
+			<div class='singleSliderCont green' id='greenSingleSliderCont'>
+				<label for='greenSingleSlider'>green</label>
+				<input class='singleSlider' id='greenSingleSlider' type='range' min='0' max='255' value='215'/>
+				<div class='singleSliderValue' id='greenSingleSliderValue'>215</div>
+			</div>
+			<div class='singleSliderCont blue' id='blueSingleSliderCont'>
+				<label for='blueSingleSlider'>blue</label>
+				<input class='singleSlider' id='blueSingleSlider' type='range' min='0' max='255' value='30'/>
+				<div class='singleSliderValue' id='blueSingleSliderValue'>30</div>
+			</div>
+
+			<div id='singleColorOutputContainer'>
+				<div id='singleColorOutput'>
+					<div id='singleColorOutputValue'>
+						<div id='rgbValue'>RGB:(215,215,30)</div>
+						<div id='hexValue'>Hexadecimal:#D7D71E</div>
+					</div>
+				</div>
+				<button id='randomColorButton'>Random Color</button>
+				<button id='saveColorButton'>Save Color</button>
+			</div>
+		</div>
+		<div class='clearBoth'></div>
+		<hr>
+		<div class='container' id='gradientsContainer'>
+			<div id='redGrad' class='colorGradient'>
+				<canvas id='redCanvas' class='gradientCanvas'>
+					Sorry, it seems that your browser does not support HTML Canvas
+				</canvas>
+				<h4 class='red'>Change Red</h4>
+				<input class='gradientSlider' id='redGradSlider' type='range' min='0' max='255' value='215'/>
+					<div class='gradientSliderValue red' id='redGradValue'>215</div>
+			</div>
+			<div id='greenGrad' class='colorGradient'>
+				<canvas id='greenCanvas' class='gradientCanvas'>
+					Sorry, it seems that your browser does not support HTML Canvas
+				</canvas>
+				<h4 class='green'>Change Green</h4>
+				<input class='gradientSlider' id='greenGradSlider' type='range' min='0' max='255' value='215'/>
+					<div class='gradientSliderValue green'  id='greenGradValue'>215</div>
+				
+			</div>
+			<div id='blueGrad' class='colorGradient'>
+				<canvas id='blueCanvas' class='gradientCanvas'>
+					Sorry, it seems that your browser does not support HTML Canvas
+				</canvas>
+				<h4 class='blue'>Change Blue</h4>
+				<input class='gradientSlider' id='blueGradSlider' type='range' min='0' max='255' value='30'/>
+					<div class='gradientSliderValue blue' id='blueGradValue'>30</div>
+				
+			</div>
+		</div>
+		<div class='container' id='savedGradientColorsContainer'>
+			<div id='savedGradientColorsScrollCont'></div>
+		</div>
+
+		<div class='clearBoth'></div>
+	</div>
+	<hr>
+
+	<section id='about'>
+		<div  class="collapse-pm" id='expand'>[ &plus; ]</div>
+		<h2 class="collapse-clickable">About This Page:</h2>
+		<article id='aboutContents' class='hide collapse-collapsable'>
+			<p>
+				I've seen a few versions of "HTML Color Picker" online and I always thought I could do better. My initial idea consisted only of the first section in the page (with the 3 sliders), and it ended up taking much less time than I thought it would (I have HTML canvas to thank for that), and didn't look nearly as cool as I thought (again, using 'cool' pretty liberally here). 
+			</p>
+			<p>
+				Wanting to do more, I thought about a more user-friendly (cooler) way of displaying a wider array of colors. The biggest problem being RGB colors are 3-dimensional (one more dimension than what my screen has). So I went to my Physics roots: break up a 3-D problem into three 2-D problems because <i>those</i> are much easier.
+			</p>
+			<p>
+				Putting in the cursors (those little crosshairs that show what color you clicked on) was a stroke of genius, but they gave me much more trouble than I'd like to admit, to the point where I had to draw an x-y graph on paper and figure out where I wanted the damn rectangles to be. Sometimes you just gotta do things the old-school way.
+			</p>
+			<p>
+				One cool side effect of this project was my hex() function. It turns any decimal number (max 255) into a hexadecimal number. I know I could have written a more wide ranging function that doesn't have a maximum, but I decided not to spend another hour reinventing the wheel and went with the "good enough" approach.
+			</p>
+		</article>
+	</section>
+	
+	<hr>
+	
+	<footer>By Armen Ourfalian</footer>
+</body>
+<script type="text/javascript" src="../globalFunctions.js"></script>
+<script type="text/javascript" src="../navBar.js"></script>
+<script type="text/javascript" src='app/rgb.js'></script>
+<script type="text/javascript" src='app/gradients.js'></script>
+<script type="text/javascript" src='app/gradientCursors.js'></script>
+</html>
